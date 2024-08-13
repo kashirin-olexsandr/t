@@ -1,0 +1,172 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+@import url('./reset.css');
+
+/* ---- LOADER ---- */
+
+.loader {
+  width: 106px;
+  height: 56px;
+  display: block;
+  margin: 30px auto;
+  background-image: linear-gradient(#4E75FF 50px, transparent 0), linear-gradient(#4E75FF 50px, transparent 0), linear-gradient(#4E75FF 50px, transparent 0), linear-gradient(#4E75FF 50px, transparent 0), radial-gradient(circle 14px, #4E75FF 100%, transparent 0);
+  background-size: 48px 15px , 15px 35px, 15px 35px, 25px 15px, 28px 28px;
+  background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+.loader::after,
+.loader::before {
+  content: '';  
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border: 6px solid #4E75FF;
+  border-radius: 50%;
+  left: -45px;
+  top: -10px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#4E75FF 64px, transparent 0), linear-gradient(#4E75FF 66px, transparent 0), radial-gradient(circle 4px, #4E75FF 100%, transparent 0);
+  background-size: 40px 1px , 1px 40px, 8px 8px;
+  background-position: center center;
+  box-sizing: border-box;
+  animation: rotation 0.3s linear infinite;
+}
+.loader::before {
+  left: 25px;
+  top: 60px;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+
+body {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #2E2F42;
+}
+
+button {
+  padding: 8px 16px 8px 16px;
+  border-radius: 8px;
+  background-color:#4E75FF;
+  border: 1px solid #4E75FF;
+  color: #FFFFFF;
+  
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+
+}
+
+button:hover,
+button:focus {
+  background-color:#6C8CFF;
+}
+
+/* ---- GALLERY ---- */
+
+/* ---- INPUT ---- */
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.form-input {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  width: 272px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+
+  font-size: 16px;
+  font-weight: 400;
+  transition: border-color 0.3s;
+  outline: none; /* Убирает стандартный фокус */
+}
+
+.form-input:hover,
+.form-input:focus {
+  border: 1px solid #000000;
+}
+
+.form-input:not(:placeholder-shown) {
+  border: 1px solid #4E75FF;
+}
+
+/* Отключение hover и focus при вводе текста */
+.form-input:not(:placeholder-shown):hover,
+.form-input:not(:placeholder-shown):focus {
+  border: 1px solid #4E75FF;
+  outline: none;
+}
+
+.form-input::placeholder {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-align: left;
+
+}
+
+/* ---- CARDS ---- */
+
+.gallery {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.gallery-list-item {
+  width: 360px;
+  border: 1px solid #808080;
+}
+
+.gallery-img {
+  margin: auto;
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.sub-list {
+  display: flex;
+  width: 360px;
+}
+
+.sub-list-item {
+  margin: auto;
+  text-align: center;
+}
+
+/* ---- LOAD MORE BUTTON */
+
+.load-more-btn {
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
